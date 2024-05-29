@@ -9,4 +9,4 @@ Bonus:
 
 -------------------------------------------------------------------------------------------------------------------------------
 
-Richiamo vue in js, aggiungo all array un contatore per le slide. Creo un bottone a cui associo una funzione con un evento, stampo il primo oggetto dell array a schermo e li scorro usando la funzione data al bottone incrementando o diminuendo il valore del contatores. 
+Richiamo vue in js, aggiungo all array un contatore per le slide. Creo un bottone a cui associo una funzione con un evento, stampo il primo oggetto dell array a schermo e li scorro usando la funzione data al bottone incrementando o diminuendo il valore del contatore. 
