@@ -17,28 +17,25 @@
                 
                 <button @click="back" ><i class="fa-solid fa-arrow-left"></i></button>
             </div> 
-            <div class="slider-wrapper" tabindex="0">
-               <div class="item">
-                
+            <div class="slider-wrapper" tabindex="0"v-for="(slide,index) in slides":key="index" >
+               <div class="item" v-if="index === CurrentImage">
               
-                    <img src="img/01.webp" alt="Spiderman" />
+                    <img :src="slides[CurrentImage].image" alt="slides[CurrentImage].title" />
                     <div class="text">
-                        <h3>Spiderman</h3>
+                       
+                        <h3 >{{slides[CurrentImage].title}}</h3>
                         <p>
-                            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Et temporibus voluptatum suscipit
-                            tempore aliquid deleniti aut
-                            veniam inventore eligendi ex ad ullam, cumque provident totam omnis, magnam dolores dolorum
-                            corporis.
+                           {{slides[CurrentImage].text}}
                         </p>
                     </div>
                 </div>
-                
-            </div>
-            <div>
+                </div>
+                <div>
                 <button @click="next">
                     <i class="fa-solid fa-arrow-right"></i>
                 </button>
             </div>
+            
         </div>
 
     </div>

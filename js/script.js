@@ -23,7 +23,7 @@ const slides = [
         title: "Marvel's Avengers",
         text: 'Marvel\'s Avengers is an epic, third-person, action-adventure game that combines an original, cinematic story with single-player and co-operative gameplay.',
     },
-    CurrentImage=0
+   
 ];
 
 
@@ -46,12 +46,14 @@ createApp({
         
         
         return{
-             slides:
-               [ {
+            CurrentImage:0,
+             slides:[
+                {
                     image: 'img/01.webp',
                         title: 'Marvel\'s Spiderman Miles Morale',
                         text: 'Experience the rise of Miles Morales as the new hero masters incredible, explosive new powers to become his own Spider-Man.',
-                    }, {
+                    }, 
+                    {
                         image: 'img/02.webp',
                         title: 'Ratchet & Clank: Rift Apart',
                         text: 'Go dimension-hopping with Ratchet and Clank as they take on an evil emperor from another reality.',
@@ -68,8 +70,8 @@ createApp({
                         title: "Marvel's Avengers",
                         text: 'Marvel\'s Avengers is an epic, third-person, action-adventure game that combines an original, cinematic story with single-player and co-operative gameplay.',
                     },
-                    CurrentImage= 0
-               ] ,
+                 ]
+                ,
             }
            
 
@@ -77,23 +79,30 @@ createApp({
         
         }, 
         methods: {
+           
+
             back: function(){
-              if(CurrentImage>0){
-                CurrentImage--
-               console.log(CurrentImage);
+              if(this.CurrentImage > 0){
+                this.CurrentImage--
+               console.log(this.CurrentImage);
                 return 'click'}
+                else{
+                    this.CurrentImage= slides.length-1;
+                    console.log(this.CurrentImage);
+                }
                 
            },
            next: function(){
-            if(CurrentImage < slides.length -1){
-                CurrentImage++;
-                console.log(CurrentImage);
+            if(this.CurrentImage < slides.length -1){
+               this.CurrentImage++;
+                console.log(this.CurrentImage);
             }
             else{
-                CurrentImage=0;
-                console.log(CurrentImage);
+                this.CurrentImage=0;
+                console.log(this.CurrentImage);
             }
            }
+        
 }
 }).mount('#app')
 
@@ -101,3 +110,9 @@ createApp({
 
 
 console.log(slides);
+
+
+
+//<div v-for="(slide, index) in slides" :key="index">
+//<h2>{{slide.title}}</h2>
+//</div>
